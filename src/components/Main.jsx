@@ -1,15 +1,20 @@
+import { useState } from "react";
 export default function Main(){
-    const ingredients = ["Chicken", "Oregano", "Tomatoes"];
+    // const ingredients = ["Chicken", "Oregano", "Tomatoes"];
+    let [ingredients,funcky] = useState([]);
     const  ListOfIngredients=ingredients.map(ingredient =>(<li key={ingredient}>{ingredient}</li>))
     
     function onFormSubmit(event){
 
         event.preventDefault()
-        const formdata=new FormData(event.currentTarget)
+        const formdata = new FormData(event.currentTarget)
         const newIngredient = formdata.get("ingredient")
-        ingredients.push(newIngredient);
-        console.log(newIngredient)
-        console.log("Form Submitted")
+        if (newIngredient && !ingredients.includes(newIngredient)) {
+            funcky(prev => [...prev, newIngredient]);
+        }
+        // ingredients.push(newIngredient);
+        // console.log(newIngredient)
+        // console.log("Form Submitted")
     }
     return(
         <main>
