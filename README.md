@@ -1,12 +1,29 @@
-# React + Vite
+🍳 Chef-out-of-the-box
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Turn your kitchen leftovers into a feast!
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+
+
+
+Chef-out-of-the-box is a Google Generative AI-powered recipe generator 🥗 that helps you create delicious dishes based on ingredients you already have.
+Whether you’re a dad learning to cook 👨‍🍳 or a foodie experimenting with leftovers, this tool has you covered!
+
+✨ Features
+
+🥘 AI-powered recipes – no two results are the same.
+
+🥦 Ingredient-first approach – enter what you have, not what you don’t.
+
+⚡ Fast & responsive – built with React + Vite + TailwindCSS.
+
+🎯 Beginner friendly – simple steps for anyone, even kitchen newbies.
+
+🛠️ Tech Stack
+Category	Tools
+Frontend -	React, Vite
+AI	- Google Generative AI(Gemini)
+Utilities	: deno
