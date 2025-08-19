@@ -51,3 +51,76 @@ npm install
 # Run the development server
 npm run dev
 ```
+
+## 🎯 Usage
+
+1. Enter the ingredients you currently have.
+
+2. Click "Generate Recipe".
+
+3. Receive a unique recipe with steps & tips.
+
+4. Cook, taste, and enjoy 🍴.
+
+## 💡 Example
+
+* Input: Eggs, Spinach, Garlic
+
+* Output: Garlic Spinach Omelette 🥚🥬🧄
+
+<details> <summary>📸 Suggested Screenshots (click to expand)</summary>
+
+* 🖼️ Project Logo / Banner → add at the very top.
+
+* 📝 Ingredient Input Screen → below Usage.
+
+* 🍲 Generated Recipe Output Page → under Example.
+ 
+* ⚙️ Tech Stack Logos → inside Tech Stack.
+
+* 🎥 Demo GIF / short video → at the bottom (Live Demo).
+
+</details>
+---
+
+## 🔮 Future Prospects
+
+- 🎛️ User Preferences – allow filtering recipes (veg-only, quick meals, low-calorie, etc.).
+
+- ⏳ Loading Screen / Animation – add smooth UX while AI generates results.
+
+- 📱 Mobile-first enhancements – fully responsive design for all devices.
+
+- 🌍 Multi-language support – recipes in multiple languages.
+
+--- 
+
+## 🤝 Contributing
+
+Contributions are welcome 💡!
+
+Fork the repository
+
+Create a feature branch (feature-xyz)
+
+Commit your changes
+
+Push your branch and open a Pull Request
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 🙌 Acknowledgements
+
+Google Generative AI – powering the recipe creativity.
+
+React + Vite – making frontend fast & enjoyable.
+
+Deno – a neat utility runtime.
+
+All the dads & beginners stepping into the kitchen 👨‍🍳.
