@@ -32,7 +32,7 @@ It’s designed to be flexible, easy-to-use, and a great companion for beginners
 | **Backend**    | JavaScript |
 | **Utility**    | Deno |
 | **AI**         | Google Generative AI |
-| **Styling**    | TailwindCSS (optional) |
+| **Styling**    | CSS (optional) |
 
 ---
 
