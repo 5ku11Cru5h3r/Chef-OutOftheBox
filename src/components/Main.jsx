@@ -45,7 +45,11 @@ export default function Main() {
 
   useEffect(()=>{
     if(recipe !== "" && recipeSection.current){
-      recipeSection.current.scrollIntoView()
+      const yCoord = recipeSection.current.getBoundingClientRect().top + window.scrollY
+            window.scroll({
+                top: yCoord,
+                behavior: "smooth" 
+            })
     }
   },[recipe])
 
