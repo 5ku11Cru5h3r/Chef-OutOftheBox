@@ -1,48 +1,57 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 // import {test} from "./test.md";
 import { generateRecipe} from "./ai"
 import IngredientsList from "./ingredientsList";
 import ChefRecipe from "./ChefRecipe";
 
 
-  // function onFormSubmit(event){
-
-  //     event.preventDefault()
-  //     const formdata = new FormData(event.currentTarget)
-  //     const newIngredient = formdata.get("ingredient")
-  //     if (newIngredient && !ingredients.includes(newIngredient)) {
-  //         funcky(prev => [...prev, newIngredient]);
-  //     }
-  //     // ingredients.push(newIngredient);
-  //     // console.log(newIngredient)
-  //     // console.log("Form Submitted")
-  // }
-  export default function Main() {
+// function onFormSubmit(event){
+//
+//     event.preventDefault()
+//     const formdata = new FormData(event.currentTarget)
+//     const newIngredient = formdata.get("ingredient")
+//     if (newIngredient && !ingredients.includes(newIngredient)) {
+//         funcky(prev => [...prev, newIngredient]);
+//     }
+//     // ingredients.push(newIngredient);
+//     // console.log(newIngredient)
+//     // console.log("Form Submitted")
+// }
+export default function Main() {
   // const ingredientSample = ["Chicken", "Oregano", "Tomatoes","Milk"];
   const ingredientSample = [];
   let [ingredients, funcky] = useState([...ingredientSample]);
+  const [preference, preferenceState] = useState("vegetarian");
 
-  // const [AI_Recipe,AI_Recipe_state]=useState();
-  function onFormSubmit(formdata) {
+  function onFormSubmit(event) {
+    event.preventDefault();
+    const formdata = new FormData(event.currentTarget);
     const newIngredient = formdata.get("ingredient");
     if (newIngredient && !ingredients.includes(newIngredient)) {
       funcky((prev) => [...prev, newIngredient.charAt(0).toUpperCase() + newIngredient.slice(1)]);
     }
+    event.currentTarget.reset();
   }
 
   const [recipe,recipeState]=useState("")
-  const [preference,preferenceState]=useState("vegetarian")
   async function toggleRecipe(){
      const recipeResponse= await generateRecipe(ingredients)
      recipeState(recipeResponse)
-     
   }
-  function preferenceButton(){
+  // function preferenceButton(){
+  //
+  // }
+  const recipeSection = useRef(null)
 
-  }
+  useEffect(()=>{
+    if(recipe !== "" && recipeSection.current){
+      recipeSection.current.scrollIntoView()
+    }
+  },[recipe])
+
   return (
     <main>
-      <form action={onFormSubmit}>
+      <form onSubmit={onFormSubmit}>
         <input
           type="text"
           aria-label="Add ingredient"
@@ -54,13 +63,14 @@ import ChefRecipe from "./ChefRecipe";
       </form>
       {/* <button className="" onClick={preferenceButton}>{preference}</button> */}
       {ingredients.length > 0 && (
-        <IngredientsList ingredients={ingredients} toggle={toggleRecipe}/>
-        )}
-        {recipe!=""?(
-          <ChefRecipe recipe={recipe} preference ={preference}/>
-        ):null
-        }
-
+        <IngredientsList ingredients={ingredients} toggle={toggleRecipe} />
+      )}
+      {recipe !== "" ? (
+        <div ref={recipeSection}>
+          <h2>I Recommend:</h2>
+          <ChefRecipe recipe={recipe} preference={preference} />
+        </div>
+      ) : null}
     </main>
   );
 }
