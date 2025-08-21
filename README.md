@@ -38,7 +38,8 @@ It’s designed to be flexible, easy-to-use, and a great companion for beginners
 
 ## 📦 Installation  
 
-```bash
+```
+bash
 # Clone this repository
 git clone https://github.com/your-username/Chef-out-of-the-box.git  
 
@@ -46,10 +47,10 @@ git clone https://github.com/your-username/Chef-out-of-the-box.git
 cd Chef-out-of-the-box  
 
 # Install dependencies
-npm install  
+npm install  || deno install .
 
 # Run the development server
-npm run dev
+npm run dev || deno run dev
 ```
 
 ## 🎯 Usage
